@@ -1,0 +1,3 @@
+StopTrigger
+방법1: 각 객체를 List에 관리<-이것으로 확정
+방법2: getClass()를 이용함

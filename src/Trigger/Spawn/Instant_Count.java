@@ -8,8 +8,8 @@ public class Instant_Count extends SpawnTriggers{
     private final int targetNumber;
     private final int count;
     private final int mode;
-    public Instant_Count(Set<Integer> set, int Spawn, GameMap gameMap, int targetNumber, int count, int mode) {
-        super(set, Spawn, gameMap);
+    public Instant_Count(Set<Integer> set, int Spawn, GameMap gameMap, boolean multiTrigger, int targetNumber, int count, int mode) {
+        super(set, Spawn, gameMap, multiTrigger);
         this.targetNumber = targetNumber;
         this.count = count;
         this.mode = mode;

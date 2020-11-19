@@ -9,8 +9,9 @@ import java.util.Set;
 public class GameMap {
     public volatile boolean touch = false;
     Set<Trigger> initTriggers = new HashSet<>();
-    public int[] count = new int[999];
-    LinkedList<Trigger>[] groups = new LinkedList[999];
+    public volatile int[] count = new int[999];
+    public LinkedList<Trigger>[] groups = new LinkedList[999];
+    private LinkedList<Trigger> runTriggers;
     public GameMap(){
         
     }
@@ -19,7 +20,13 @@ public class GameMap {
     }
     public void run(int group){
         for (Trigger run:groups[group]) {
+            runTriggers.add(run);
             run.start();
+        }
+    }
+    public void stop(int group){
+        for (int i = 0; i < runTriggers.size(); i++) {
+            if(runTriggers.get(i).groups.contains(group))runTriggers.get(i).stopTrigger();
         }
     }
 }
