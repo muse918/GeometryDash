@@ -1,15 +1,18 @@
-package Trigger.Spawn;
+package Triggers.Spawn;
 
 import Main.GameMap;
 
 import java.util.Set;
 
-public class Instant_Count extends SpawnTriggers{
+public class Instant_Count extends SpawnTriggers implements Cloneable{
     private final int targetNumber;
     private final int count;
     private final int mode;
-    public Instant_Count(Set<Integer> set, int Spawn, GameMap gameMap, boolean multiTrigger, int targetNumber, int count, int mode) {
-        super(set, Spawn, gameMap, multiTrigger);
+    public static final int SMALLER = 1;
+    public static final int EQUAL = 2;
+    public static final int BIGGER = 3;
+    public Instant_Count(Set<Integer> group, int Spawn, GameMap gameMap, boolean multiTrigger, int targetNumber, int count, int mode) {
+        super(group, gameMap, multiTrigger, Spawn);
         this.targetNumber = targetNumber;
         this.count = count;
         this.mode = mode;
@@ -34,5 +37,10 @@ public class Instant_Count extends SpawnTriggers{
                 }
                 break;
         }
+    }
+
+    @Override
+    public Object clone() {
+        return super.clone();
     }
 }
