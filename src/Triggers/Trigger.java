@@ -15,6 +15,7 @@ public abstract class Trigger extends Thread implements Cloneable{
     public final boolean multiTrigger;
     public boolean isTriggered;
     public boolean isToggled = false;
+    public boolean isEnd = false;
 
     public Trigger(Set<Integer> group, GameMap gameMap, boolean multiTrigger){//생성자
         groups = group;
@@ -36,11 +37,7 @@ public abstract class Trigger extends Thread implements Cloneable{
 
     @Override
     public Object clone(){
-        try {
-            return super.clone();
-        } catch (CloneNotSupportedException e) {
-            e.printStackTrace();
-        }
         return null;
     }
+
 }

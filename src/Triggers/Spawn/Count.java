@@ -21,10 +21,12 @@ public class Count extends SpawnTriggers implements Cloneable{
                 return;
             }
         }
+        isEnd = true;
     }
 
     @Override
-    public Object clone() {
-        return super.clone();
+    public Object clone(){
+        Count clone = new Count(groups, SpawnGroup, up, multiTrigger, targetNumber, count);
+        return clone;
     }
 }

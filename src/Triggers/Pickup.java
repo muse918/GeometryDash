@@ -25,6 +25,7 @@ public class Pickup extends Trigger implements Cloneable{
 
     @Override
     public Object clone() {
-        return super.clone();
+        Pickup clone = new Pickup(groups, up, multiTrigger, pickupNumber, pickupCount);
+        return clone;
     }
 }

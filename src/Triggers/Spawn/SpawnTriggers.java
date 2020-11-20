@@ -15,8 +15,4 @@ public abstract class SpawnTriggers extends Trigger implements Cloneable{
         up.run(SpawnGroup);
     }//실행 요청
 
-    @Override
-    public Object clone() {
-        return super.clone();
-    }
 }

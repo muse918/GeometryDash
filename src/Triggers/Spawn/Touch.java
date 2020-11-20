@@ -21,10 +21,12 @@ public class Touch extends SpawnTriggers implements Cloneable{
                 }
             }
         }
+        isEnd = true;
     }
 
     @Override
     public Object clone() {
-        return super.clone();
+        Touch clone = new Touch(groups, SpawnGroup, up, multiTrigger, holdOn);
+        return clone;
     }
 }

@@ -37,10 +37,12 @@ public class Instant_Count extends SpawnTriggers implements Cloneable{
                 }
                 break;
         }
+        isEnd = true;
     }
 
     @Override
     public Object clone() {
-        return super.clone();
+        Instant_Count clone = new Instant_Count(groups, SpawnGroup, up, multiTrigger, targetNumber, count, mode);
+        return clone;
     }
 }

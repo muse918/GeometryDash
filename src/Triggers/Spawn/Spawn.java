@@ -16,12 +16,18 @@ public class Spawn extends SpawnTriggers implements Cloneable{
         try {
             sleep((long) delay*1000);
         } catch (InterruptedException e) {}
-        if(stop||isToggled)return;
+        if(stop||isToggled) {
+            isEnd = true;
+            return;
+        }
+        System.out.println(up.runTriggers.size());//debug
         super.Spawn();
+        isEnd = true;
     }
 
     @Override
     public Object clone() {
-        return super.clone();
+        Spawn clone = new Spawn(groups, SpawnGroup, up, delay, multiTrigger);
+        return clone;
     }
 }
